@@ -6,12 +6,15 @@ import {
 } from '@angular/common/http';
 import { environment } from 'src/environment/environment';
 import { Observable } from 'rxjs';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
   private host = environment.apiUrl;
+  private token: any;
+  private loggedInUsername: any;
 
   constructor(private http: HttpClient) {}
 
@@ -21,5 +24,17 @@ export class AuthenticationService {
       user,
       { observe: 'response' }
     );
+  }
+
+  public register(user: User): Observable<User | HttpErrorResponse> {
+    return this.http.post<User | HttpErrorResponse>(
+      `${this.host}/user/register`,
+      user
+    );
+  }
+
+  public logout(): void {
+    this.token = null;
+    this.loggedInUsername = null;
   }
 }
