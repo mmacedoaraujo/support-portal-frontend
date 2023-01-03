@@ -20,7 +20,7 @@ export class AuthenticationService {
 
   public login(user: User): Observable<HttpResponse<any> | HttpErrorResponse> {
     return this.http.post<HttpResponse<any> | HttpErrorResponse>(
-      `${this.host}/user/login`,
+      `${this.host}/users/login`,
       user,
       { observe: 'response' }
     );
@@ -28,7 +28,7 @@ export class AuthenticationService {
 
   public register(user: User): Observable<User | HttpErrorResponse> {
     return this.http.post<User | HttpErrorResponse>(
-      `${this.host}/user/register`,
+      `${this.host}/users/register`,
       user
     );
   }
@@ -36,5 +36,26 @@ export class AuthenticationService {
   public logout(): void {
     this.token = null;
     this.loggedInUsername = null;
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    localStorage.removeItem('users');
+  }
+
+  public saveToken(token: string): void {
+    this.token = token;
+    localStorage.setItem('token', token);
+  }
+
+  public addUserToLocalCache(user: User): void {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  public getUserFromLocalCache(): User {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : [];
+  }
+
+  public loadToken(): void {
+    this.token = localStorage.getItem('token');
   }
 }
