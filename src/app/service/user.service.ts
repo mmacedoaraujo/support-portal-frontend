@@ -33,10 +33,47 @@ export class UserService {
     return this.http.get(`${this.host}/users/resetpassword/${email}`);
   }
 
-  public updateProfileImage(formData: FormData): Observable<HttpEvent<User> | HttpErrorResponse> {
-    return this.http.post<User>(`${this.host}/users/updateProfileImage`, formData,
-    {reportProgress: true,
-      observe: 'events'
-    });
+  public updateProfileImage(
+    formData: FormData
+  ): Observable<HttpEvent<User> | HttpErrorResponse> {
+    return this.http.post<User>(
+      `${this.host}/users/updateProfileImage`,
+      formData,
+      { reportProgress: true, observe: 'events' }
+    );
+  }
+
+  public deleteUser(userId: number): Observable<any | HttpErrorResponse> {
+    return this.http.delete<any>(`${this.host}/users/delete/${userId}`);
+  }
+
+  public addUsersToLocalCache(users: User[]): void {
+    localStorage.setItem('users', JSON.stringify(users));
+  }
+
+  public getUsersFromLocalCache(): User[] {
+    if (localStorage.getItem('users')) {
+      const user = localStorage.getItem('users');
+      return user ? JSON.parse(user) : [];
+    }
+    return [];
+  }
+
+  public createUserFormData(
+    loggedInUsername: string,
+    user: User,
+    profileImage: File
+  ): FormData {
+    const formData = new FormData();
+    formData.append('currentUsername', loggedInUsername);
+    formData.append('firstName', user.firstName);
+    formData.append('lastName', user.lastName);
+    formData.append('username', user.username);
+    formData.append('email', user.email);
+    formData.append('role', user.role);
+    formData.append('profileImage', profileImage);
+    formData.append('isEnabled', JSON.stringify(user.isEnabled));
+    formData.append('isNonLocked', JSON.stringify(user.isNonLocked));
+    return formData;
   }
 }
