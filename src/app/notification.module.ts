@@ -1,4 +1,7 @@
-const notifierDefaultOptions: NotifierOptions = {
+import { NgModule } from '@angular/core';
+import { NotifierOptions, NotifierModule } from 'angular-notifier';
+
+const notifierCustomOptions: NotifierOptions = {
   position: {
     horizontal: {
       position: 'left',
@@ -38,3 +41,9 @@ const notifierDefaultOptions: NotifierOptions = {
     overlap: 150,
   },
 };
+
+@NgModule({
+  imports: [NotifierModule.withConfig(notifierCustomOptions)],
+  exports: [NotifierModule],
+})
+export class NotificationModule {}

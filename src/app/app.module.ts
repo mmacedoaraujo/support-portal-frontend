@@ -10,6 +10,7 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { AuthenticationGuard } from './guard/authentication.guard';
 import { NotificationModule } from './notification.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
