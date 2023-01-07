@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpEvent } from '@angular/common/http';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { CustomHttpResponse } from '../model/custom-http-response';

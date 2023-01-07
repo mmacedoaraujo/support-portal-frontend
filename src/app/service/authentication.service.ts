@@ -5,7 +5,7 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
