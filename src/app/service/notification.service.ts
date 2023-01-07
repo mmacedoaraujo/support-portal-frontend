@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { NotifierService } from 'angular-notifier';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
 
-  constructor() { }
+  constructor(private notifier: NotifierService) {}
 }
