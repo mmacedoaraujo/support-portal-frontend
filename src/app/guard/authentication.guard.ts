@@ -1,16 +1,29 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
+import { NotificationService } from '../service/notification.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationGuard implements CanActivate {
+  constructor(
+    private authenticationservice: AuthenticationService,
+    private router: Router,
+    private notificationService: NotificationService
+  ) {}
 
-  constructor(private authenticationservice: AuthenticationService, private router: Router) {}
-
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
     return true;
   }
 
@@ -20,8 +33,7 @@ export class AuthenticationGuard implements CanActivate {
     }
 
     this.router.navigate(['/login']);
-    //TODO send notification to user
+
     return false;
   }
-
 }
