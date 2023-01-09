@@ -33,9 +33,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.showLoading = true;
     console.log(user);
     this.subscriptions.push(
-      this.authenticationService
-        .login(user)
-        .subscribe((response: HttpResponse<User> | any) => {
+      this.authenticationService.login(user).subscribe(
+        (response: HttpResponse<User> | any) => {
           const token: any = response.headers.get('Jwt-Token');
           this.authenticationService.saveToken(token);
           this.authenticationService.addUserToLocalCache(response.body);
@@ -43,19 +42,29 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.showLoading = false;
         },
         (errorResponse: HttpErrorResponse) => {
-          console.log(error);
-          this.sendErrorNotification(NotificationType.ERROR, errorResponse.error.message);
+          console.log(errorResponse);
+          this.sendErrorNotification(
+            NotificationType.ERROR,
+            errorResponse.error.message
+          );
           this.showLoading = false;
         }
+      )
     );
   }
+
   sendErrorNotification(notiticationType: NotificationType, message: string) {
-   if (message) {
-    this.noitificationService.showNotification(notiticationType, message);
-   }else {
-    this.noitificationService.showNotification(notiticationType, 'AN ERROR OCURRED, PLEASE TRY AGAIN');
-   }
+    if (message) {
+      this.noitificationService.showNotification(notiticationType, message);
+    } else {
+      this.noitificationService.showNotification(
+        notiticationType,
+        'AN ERROR OCURRED, PLEASE TRY AGAIN'
+      );
+    }
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
+  }
 }
