@@ -6,9 +6,10 @@
 
 
 html {
-  background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2460.jpg?w=1380&t=st=1673273650~exp=1673274250~hmac=57ed02f8104f7e65d739b90b47dc635773c50e4fce5a8ec1b01b2718636d6235");
+  opacity: 95%;
+  background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2728.jpg?w=1380&t=st=1673275847~exp=1673276447~hmac=5eaf0cadb434d041cfb5d0a3133453ceb406da95c28ded820e2d6d81d7590303");
   background-size: cover;
-  background-position: center;
+  background-position: right;
   height: 100%;
 }
 

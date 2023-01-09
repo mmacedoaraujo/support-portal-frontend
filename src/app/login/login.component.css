@@ -11,18 +11,17 @@ html {
   width: 500px;
   margin-top: auto;
   margin-bottom: auto;
-  background: linear-gradient(320deg, rgba(15, 17, 35, 0.466), rgba(150, 7, 28, 0.212), rgba(255, 107, 44, 0.103));
+  background-color: rgba(19, 29, 101, 0.384);
   position: relative;
   top: 5.5em;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 10px;
-  /* From https://css.glass */
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.4px);
-  -webkit-backdrop-filter: blur(7.4px);
+  box-shadow: 0 8px 32px 0 rgba(10, 12, 44, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
 }
 .brand_logo_container {
   position: absolute;
@@ -71,6 +70,8 @@ html {
   background-color: #0e165f !important;
 }
 .mt-4 a {
+  text-decoration: none;
+  font-weight: bold;
   color: #d62828;
   margin-left: 0.5em;
 }
