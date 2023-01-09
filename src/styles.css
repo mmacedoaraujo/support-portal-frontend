@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css'
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+@import "https://use.fontawesome.com/releases/v5.8.1/css/all.css";
+
+
+
+
+html {
+  background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2460.jpg?w=1380&t=st=1673273650~exp=1673274250~hmac=57ed02f8104f7e65d739b90b47dc635773c50e4fce5a8ec1b01b2718636d6235");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+body {
+  display: inline;
+}
