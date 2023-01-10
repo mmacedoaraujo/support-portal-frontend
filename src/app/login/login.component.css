@@ -75,3 +75,15 @@ html {
   color: #d62828;
   margin-left: 0.5em;
 }
+
+.help-block-username {
+  position: relative;
+  margin: 0.1em;
+  bottom: 0.9em;
+}
+
+.help-block-password {
+  position: relative;
+  margin: 0.1em;
+  bottom: 0.5em;
+}

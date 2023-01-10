@@ -14,7 +14,7 @@ import { HeaderType } from '../enum/header-type.enum';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  public showLoading: boolean = true;
+  public showLoading: boolean = false;
   private subscriptions: Subscription[] = [];
   constructor(
     private router: Router,
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     );
   }
 
-  sendErrorNotification(notiticationType: NotificationType, message: string) {
+  private sendErrorNotification(notiticationType: NotificationType, message: string) {
     if (message) {
       this.noitificationService.showNotification(notiticationType, message);
     } else {
