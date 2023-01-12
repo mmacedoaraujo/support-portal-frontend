@@ -27,10 +27,10 @@
           <span class="help-block-password" style="color:red;" *ngIf="passwordInput.invalid && passwordInput.touched">Please
             enter a password.</span>
           <div class="d-flex justify-content-center mt-3 login_container">
-            <button type="submit" name="button" class="btn login_btn">
+            <button type="submit" [disabled]="loginForm.invalid || showLoading" name="button" class="btn login_btn">
               <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;&nbsp;
-              <span *ngIf="showLoading">Loading...</span>
               <span *ngIf="!showLoading">Login</span>
+              <span *ngIf="showLoading">Loading...</span>
             </button>
           </div>
         </form>
@@ -38,7 +38,7 @@
       <div class="mt-4">
         <div class="d-flex justify-content-center links">
           Don't have an account? <a class="sign-up-link" routerLink="/register" class="ml-2"
-            style="color: #d62828;">Sign Up</a>
+            style="color: rgb(130,98,97);">Sign Up</a>
         </div>
       </div>
     </div>

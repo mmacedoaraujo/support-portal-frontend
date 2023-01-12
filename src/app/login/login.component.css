@@ -1,4 +1,6 @@
-Coded with love by Mutiullah Samim body,
+Coded with love by Mutiullah Samim
+
+body,
 html {
   margin: 0;
   padding: 0;
@@ -11,7 +13,7 @@ html {
   width: 500px;
   margin-top: auto;
   margin-bottom: auto;
-  background-color: rgba(19, 29, 101, 0.384);
+  background: linear-gradient(135deg, rgba(49,67,83, 0.5) 30%, rgba(13,13,13, 0.1));
   position: relative;
   top: 5.5em;
   display: flex;
@@ -44,7 +46,7 @@ html {
 }
 .login_btn {
   width: 100%;
-  background: #d62828 !important;
+  background: rgb(255,207,33) !important;
   color: white !important;
 }
 .login_btn:focus {
@@ -55,7 +57,7 @@ html {
   padding: 0 2rem;
 }
 .input-group-text {
-  background: #d62828 !important;
+  background: rgb(255,207,33) !important;
   color: white !important;
   border: 0 !important;
   border-radius: 0.25rem 0 0 0.25rem !important;
@@ -72,7 +74,7 @@ html {
 .mt-4 a {
   text-decoration: none;
   font-weight: bold;
-  color: #d62828;
+  color: rgb(255,207,33);
   margin-left: 0.5em;
 }
 
