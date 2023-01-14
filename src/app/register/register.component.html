@@ -35,7 +35,7 @@
               </div>
               <input type="text" class="form-control" name="email" placeholder="Email" required ngModel #emailInput="ngModel">
             </div>
-            <span class="help-block" *ngIf="emailInput.invalid && emailInput.touched" style="color:red;">Please enter an email.</span>
+            <span class="help-block-email" *ngIf="emailInput.invalid && emailInput.touched" style="color:red;">Please enter an email.</span>
         <div class="d-flex justify-content-center mt-3 login_container">
           <button [disabled]="registerForm.invalid || showLoading" type="submit" name="button" class="btn login_btn">
             <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;&nbsp;

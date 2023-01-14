@@ -78,14 +78,14 @@ html {
   margin-left: 0.5em;
 }
 
-.help-block-username {
+.help-block {
   position: relative;
-  margin: 0.1em;
-  bottom: 0.9em;
+  bottom: 0.8em;
+  left: 2.7em;
 }
 
-.help-block-password {
+.help-block-email {
   position: relative;
-  margin: 0.1em;
-  bottom: 0.5em;
+  bottom: 0.4em;
+  left: 2.7em;
 }

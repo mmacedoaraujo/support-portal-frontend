@@ -82,10 +82,12 @@ html {
   position: relative;
   margin: 0.1em;
   bottom: 0.9em;
+  left: 2.6em;
 }
 
 .help-block-password {
   position: relative;
   margin: 0.1em;
   bottom: 0.5em;
+  left: 2.6em;
 }
