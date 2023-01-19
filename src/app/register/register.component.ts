@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
-    private noitificationService: NotificationService
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -55,9 +55,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
     message: string
   ): void {
     if (message) {
-      this.noitificationService.showNotification(notiticationType, message);
+      this.notificationService.showNotification(notiticationType, message);
     } else {
-      this.noitificationService.showNotification(
+      this.notificationService.showNotification(
         notiticationType,
         'An error occurred, please try again.'
       );
