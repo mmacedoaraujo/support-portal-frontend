@@ -23,6 +23,10 @@ export class UserComponent implements OnInit, OnDestroy {
     throw new Error('Method not implemented.');
   }
 
+  ngOnInit(): void {
+    this.getUsers(true);
+   }
+
   public changeTitle(title: string): void {
     this.titleSubject.next(title);
   }
@@ -60,6 +64,4 @@ export class UserComponent implements OnInit, OnDestroy {
       );
     }
   }
-
-  ngOnInit(): void { }
 }
