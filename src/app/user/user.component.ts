@@ -16,7 +16,9 @@ export class UserComponent implements OnInit, OnDestroy {
   public titleAction$ = this.titleSubject.asObservable();
   public users!: User[];
   public refreshing!: boolean;
+  public selectedUser!: User;
   private subscriptions: Subscription[] = [];
+
 
   constructor(private userService: UserService, private notificationService: NotificationService) { }
   ngOnDestroy(): void {
@@ -25,7 +27,7 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getUsers(true);
-   }
+  }
 
   public changeTitle(title: string): void {
     this.titleSubject.next(title);
@@ -48,6 +50,12 @@ export class UserComponent implements OnInit, OnDestroy {
         }
       )
     );
+
+  }
+
+  public onSelectUser(selectedUser: User): void {
+    this.selectedUser = selectedUser;
+    document.getElementById('openUserInfo')?.click();
 
   }
 
