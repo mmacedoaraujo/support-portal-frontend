@@ -1,7 +1,7 @@
 export class User {
   public userId!: string;
-  public firstName!: string;
-  public lastName!: string;
+  public firstName!: any;
+  public lastName!: any;
   public username!: string;
   public email!: string;
   public lastLoginDate!: Date;
@@ -13,3 +13,5 @@ export class User {
   public role!: string;
   public authorities!: [];
 }
+
+

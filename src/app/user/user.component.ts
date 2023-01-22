@@ -17,6 +17,8 @@ export class UserComponent implements OnInit, OnDestroy {
   public users!: User[];
   public refreshing!: boolean;
   public selectedUser!: User;
+  public fileName?: any;
+  public profileImage?: any;
   private subscriptions: Subscription[] = [];
 
 
@@ -59,6 +61,18 @@ export class UserComponent implements OnInit, OnDestroy {
 
   }
 
+  public onProfileImageChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const files = target.files as FileList;
+    this.fileName = target.files?.item.name;
+    this.profileImage = target.files?.item;
+    console.log(files);
+  }
+
+  public saveNewUser() {
+    document.getElementById('new-user-save')?.click();
+  }
+
   private sendNotification(
     notiticationType: NotificationType,
     message: string
@@ -73,3 +87,7 @@ export class UserComponent implements OnInit, OnDestroy {
     }
   }
 }
+function setFile(arg0: { picturePreview: string; pictureAsFile: any; }) {
+  throw new Error('Function not implemented.');
+}
+
